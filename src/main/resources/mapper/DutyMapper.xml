@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shan.project.mapper.DutyMapper">
+
+    <select id="queryList" resultType="com.shan.project.entity.Duty">
+        select `id`,
+               `name`,
+               `create_time`
+        from `duty`
+        <where>
+            <if test="param.id != null">
+                and `duty`.`id` = #{param.id}
+            </if>
+            <if test="param.name != null">
+                <bind name="nameBind" value="'%' + param.name + '%'"/>
+                and `duty`.`name` like #{nameBind}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertData">
+        insert into `duty`(`id`,`name`,`create_time`)
+        value (#{param.id},
+            #{param.name},
+            #{param.createTime})
+    </insert>
+
+</mapper>

@@ -1,0 +1,23 @@
+server:
+# 端口
+  port: 8080
+  servlet:
+    context-path: /seed/api
+
+spring:
+  datasource:
+# 数据库url
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+# 数据库用户名
+    username: username
+# 数据库用户名
+    password: password
+# 数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+
+# 是否开启knife4j
+knife4j:
+  enable: true
