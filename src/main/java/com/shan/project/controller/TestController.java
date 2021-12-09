@@ -3,6 +3,7 @@ package com.shan.project.controller;
 import com.shan.project.entity.Duty;
 import com.shan.project.service.IDutyService;
 import com.shan.project.vo.DutyCreateVO;
+import com.shan.project.vo.DutyUpdateVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,16 +40,19 @@ public class TestController {
     @GetMapping(value = "/query")
     public List<Duty> selectDutyData(Duty duty){
 
-        List<Duty> duties = dutyService.queryDutyList(duty);
+        List<Duty> list = dutyService.list();
 
-        return duties;
+        //List<Duty> duties = dutyService.queryDutyList(duty);
+
+        return list;
     }
 
     @ApiOperation(value = "修改")
     @PostMapping(value = "/update")
-    public String updateDutyData(){
+    public String updateDutyData(@RequestBody DutyUpdateVO dutyUpdateVO){
 
-        return "";
+        Integer integer = dutyService.updateDutyInfo(dutyUpdateVO);
+        return integer > 0 ?"修改成功！" : "修改失败！";
     }
 
     @ApiOperation(value = "删除")

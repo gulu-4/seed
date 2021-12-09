@@ -25,4 +25,15 @@
             #{param.createTime})
     </insert>
 
+    <update id="updateDutyInfo" >
+        update `duty`
+        <set>
+            <if test="param.name != null">
+                `name` = #{param.name}
+            </if>
+        </set>
+        where `id` = #{param.id}
+
+    </update>
+
 </mapper>
