@@ -1,9 +1,8 @@
-package com.shan.project.service;
+package com.seed.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.shan.project.entity.Duty;
-import com.shan.project.vo.DutyCreateVO;
-import com.shan.project.vo.DutyUpdateVO;
+import com.seed.entity.Duty;
+import com.seed.vo.DutyUpdateVO;
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public interface IDutyService extends IService<Duty> {
 
     /**
      * 修改信息
-     * @param dutyCreateVO
+     * @param dutyUpdateVO
      * @return
      */
     Integer updateDutyInfo(DutyUpdateVO dutyUpdateVO);

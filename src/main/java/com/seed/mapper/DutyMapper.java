@@ -1,12 +1,10 @@
-package com.shan.project.mapper;
+package com.seed.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.shan.project.entity.Duty;
-import com.shan.project.vo.DutyCreateVO;
-import com.shan.project.vo.DutyUpdateVO;
+import com.seed.entity.Duty;
+import com.seed.vo.DutyUpdateVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.plugin.Intercepts;
 
 import java.util.List;
 

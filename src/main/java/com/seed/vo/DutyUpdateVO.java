@@ -1,4 +1,4 @@
-package com.shan.project.vo;
+package com.seed.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

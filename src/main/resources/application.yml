@@ -9,15 +9,18 @@ spring:
 # 数据库url
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
 # 数据库用户名
-    username: username
+    username: root
 # 数据库用户名
-    password: password
+    password: wds12345
 # 数据库驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+# mybatis映射文件
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml
 
 # 是否开启knife4j
 knife4j:
   enable: true
+
+

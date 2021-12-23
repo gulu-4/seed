@@ -1,9 +1,9 @@
-package com.shan.project.controller;
+package com.seed.controller;
 
-import com.shan.project.entity.Duty;
-import com.shan.project.service.IDutyService;
-import com.shan.project.vo.DutyCreateVO;
-import com.shan.project.vo.DutyUpdateVO;
+import com.seed.entity.Duty;
+import com.seed.service.IDutyService;
+import com.seed.vo.DutyCreateVO;
+import com.seed.vo.DutyUpdateVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
 
 @Api(tags = "测试")
 @RestController
@@ -40,11 +39,11 @@ public class TestController {
     @GetMapping(value = "/query")
     public List<Duty> selectDutyData(Duty duty){
 
-        List<Duty> list = dutyService.list();
+        //List<Duty> list = dutyService.list();
 
-        //List<Duty> duties = dutyService.queryDutyList(duty);
+        List<Duty> duties = dutyService.queryDutyList(duty);
 
-        return list;
+        return duties;
     }
 
     @ApiOperation(value = "修改")
